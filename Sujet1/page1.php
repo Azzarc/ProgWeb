@@ -1,27 +1,33 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+session_start();
+
+if(isset($_SESSION['login']) && isset($_SESSION['mdp']))
+{
+	echo '<!DOCTYPE HTML>
+	<html>
 	<head>
-		<meta charset="utf-8" />
-		<link rel='stylesheet' href='<?php echo "../Global/style.css"; ?>' />
-		<title>Programmation Web</title>
+	<meta charset="utf-8" />
+	<link rel=\'stylesheet\' href="../Global/style.css"; ?>
+	<title>Programmation Web</title>
 	</head>
 	<body>
-		<!-- L'en-tête -->
-		<header>
-			<p>Page 1</p>
-		</header>
-				
-		
-		<!-- Le menu inclus depuis menu.php -->
-<?php
+	<!-- L\'en-tête -->
+	<header>
+	<p>Page 1</p>
+	</header>';
+	#	<!-- Le menu inclus depuis menu.php -->
 	include ("./menu.php");
-?>
-		
-		<!-- Le contenu (1 seule section suffit) -->		
-		<section>
-			<h1>Page 1</h1>
-			<p>Blablabla</p>			
-
-		</section>
+	#	<!-- Le contenu (1 seule section suffit) -->		
+	echo'
+	<section>
+	<h1>Page 1</h1>
+	<p>Blablabla</p>			
+	</section>
 	</body>
-</html>
+	</html>';
+}
+else{
+	echo '<h1>Veuillez vous connecter pour acceder a cette page !</h1>';
+
+}
+?>
