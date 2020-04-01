@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if(isset($_SESSION['login']) && isset($_SESSION['mdp']))
-{
+include '../Global/outils.php';
+
+if(verifConnex()){
 	echo '<!DOCTYPE HTML>
 	<html>
 	<head>
